@@ -10,7 +10,7 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |  #https://help.github.com/en/actions/reference/contexts-and-expression-syntax-for-github-actions#github-context
-         <b>Github Updates:</b>
-          🔨 **New Push commit**:
+         #Github Updates:
+         #🆕️ Push commit:
           Details:
-          ${{ github.event_name }} commit in ${{ github.repository }} by __"${{ github.actor }}"__. [${{github.sha}}@${{ github.ref }}]
+          ${{ github.event_name }} ⚒: commit in ${{ github.repository }} by "${{ github.actor }}". [${{github.sha}}@${{ github.ref }}]
