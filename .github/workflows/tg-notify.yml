@@ -14,7 +14,6 @@ jobs:
          #Push_Commit ⚒:
           ${{ github.event_name }} commit in ${{ github.repository }} by "${{ github."${{ github.actor }}". [${{github.sha}}@${{ github.ref }}]
           -----------------------
-          #إشعارات الكود
-          #عملية مساهمة ⚒
-          "${{github.actor}}" :تم إضافة/تعديل كود في المشروع من قبل
-          
+         #إشعارات الكود
+         #عملية مساهمة ⚒
+         "${{github.actor}}" :تم إضافة/تعديل كود في المشروع من قبل 
