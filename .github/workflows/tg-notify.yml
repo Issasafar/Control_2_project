@@ -15,4 +15,4 @@ jobs:
           ${{ github.event_name }} commit in ${{ github.repository }} by "${{ github.actor }}". [${{github.sha}}@${{ github.ref }}]
          #تحديث_للكود
          #مساهمة
-         ${{github.repository }}:تمت الإضافة/التعديل على كود المشروع 
+         تمت الإضافة/التعديل على كود المشروع: $}}github.repository{{ من قبل "$}}github.actor{{". التفاصيل: ]$}}github.sha{{@$}}github.ref{{[
