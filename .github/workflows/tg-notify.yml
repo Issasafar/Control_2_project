@@ -13,4 +13,6 @@ jobs:
          #Github_Updates: 
          #Push_Commit ⚒:
           ${{ github.event_name }} commit in ${{ github.repository }} by "${{ github.actor }}". [${{github.sha}}@${{ github.ref }}]
-         #تحديث للكود
+         #تحديث_للكود
+         #مساهمة
+         ${{github.repository }}:تمت الإضافة/التعديل على كود المشروع 
