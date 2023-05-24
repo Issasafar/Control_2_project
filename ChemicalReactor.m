@@ -4,7 +4,6 @@ properties
    surfaceArea
    %heat transfer coefficent
    heatCoefficent
-   s=tf('s')
 end
 methods
     function this=ChemicalReactor(area,coeff)
