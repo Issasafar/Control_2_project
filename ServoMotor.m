@@ -1,42 +1,39 @@
 classdef ServoMotor
-    %SERVOMOTOR models a servo motor
-    %{
-    @properties
-    
-    %}
-    
     properties
-       stator 
-       rotor
-       torque
-    end
-    
-    methods
-        function this= ServoMotor(stator,rotor,torque)
-            %SERVOMOTOR Construct an instance of this class
-            this.stator=stator;
-            this.rotor=rotor;
-            this.torque=torque;
+        torqueConstant %torque constant
+        backEmfConstant %back EMF constant
+        Resistance %inernal resistance
+        inductance %inductance if the coil
+        momentofInertia %moment of inertia
+        friction %friction
+    end 
+    methods 
+        function this=ServoMotor(kt,kb,ra,la,j,f)
+            this.friction=f;
+            this.momentofInertia=j;
+            this.backEmfConstant=kb;
+            this.torqueConstant=kt;
+            this.inductance=la;
+            this.Resistance=ra;
         end
         function result=getTransferFunction(this)
+            f=this.friction;
+            j=this.momentofInertia;
+            kb=this.backEmfConstant;
+            kt=this.torqueConstant;
+            la=this.inductance;
+            ra=this.Resistance;
             s=tf('s');
-            %retrive data from the objects
-            Kt=this.torque;
-            K=Kt;
-            %from the stator
-            N=this.stator.numberOfTurns;
-            R=this.stator.internalResistance;
-            A=this.stator.crossArea;
-            %from the rotor
-            J=this.rotor.inertialLoad;
-            B=this.rotor.fluxDensity;
-            %calculate the natural frequency 
-            wn=sqrt((Kt*N*B*A)/J);
-            %calculate the damping coefficient
-            eps=(R/2*J)*(1/wn);
-            %form the result
-            result=(K)/(s^2+2*eps*wn*s+wn^2);
+            result=kt/(s*((ra+la*s)*(s*j+f)+kt*kb));
         end
     end
-end
-
+    methods(Static)
+        function result=getSampleFunction()
+             motor=ServoMotor(900,0.2,50,0.05,0.4,0.05);
+             gf=motor.getTransferFunction;
+             result=feedback(gf,1);
+               % result=gf;
+        end
+    end
+    
+end 
