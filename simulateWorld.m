@@ -1,12 +1,12 @@
 function  result= simulateWorld(optionsArr)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
+
 world=vrworld('vrservo.x3d');
 open(world);
-fig=view(world,'-internal');
-vrdrawnow;
-
 if(optionsArr(1)~=0)
+ 
+vrdrawnow;
 servoSystem=ServoMotor.getSampleFunction;
 if(optionsArr(2)==1)
     pid1=pidtune(servoSystem,'PID');
@@ -37,7 +37,9 @@ for i=1:length(time)
    
     pause(0.01);
 end
+
 end
+
 result=1;
 end
 

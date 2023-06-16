@@ -6,9 +6,9 @@
 <Scene>
 <ProtoDeclare name='Toggle'>
 <ProtoInterface>
-<field name='Toggle_Scale' type='SFVec3f' accessType='inputOutput' value='1 1 1'/>
-<field name='Toggle_Rotation' type='SFRotation' accessType='inputOutput' value='0 1 0 0'/>
 <field name='Toggle_Translation' type='SFVec3f' accessType='inputOutput' value='0 0 0'/>
+<field name='Toggle_Rotation' type='SFRotation' accessType='inputOutput' value='0 1 0 0'/>
+<field name='Toggle_Scale' type='SFVec3f' accessType='inputOutput' value='1 1 1'/>
 <field name='Toggle_State' type='SFBool' accessType='outputOnly'/>
 </ProtoInterface>
 <ProtoBody>
@@ -132,6 +132,23 @@
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   ]]>
   </Script>
 <ROUTE fromNode='Toggle_Sensor' fromField='isActive' toNode='Toggle_Switch_Script' toField='SW_Active'/>
@@ -139,9 +156,9 @@
 </ProtoBody></ProtoDeclare>
 <ProtoDeclare name='Push_Button'>
 <ProtoInterface>
-<field name='Button_Caption' type='MFString' accessType='inputOutput' value='"Push" "Button" '/>
-<field name='Button_Scale' type='SFVec3f' accessType='inputOutput' value='1 1 1'/>
 <field name='Button_Translation' type='SFVec3f' accessType='inputOutput' value='0 0 0'/>
+<field name='Button_Scale' type='SFVec3f' accessType='inputOutput' value='1 1 1'/>
+<field name='Button_Caption' type='MFString' accessType='inputOutput' value='"Push" "Button" '/>
 <field name='Button_State' type='SFBool' accessType='outputOnly'/>
 </ProtoInterface>
 <ProtoBody>
@@ -239,6 +256,23 @@
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   ]]>
   </Script>
 <ROUTE fromNode='PushButton_Sensor' fromField='isActive' toNode='PushButton_Script' toField='PButton_Active'/>
@@ -246,9 +280,9 @@
 </ProtoBody></ProtoDeclare>
 <ProtoDeclare name='Switch_Button'>
 <ProtoInterface>
-<field name='Switch_Caption' type='MFString' accessType='inputOutput' value='"Switch" '/>
-<field name='Switch_Scale' type='SFVec3f' accessType='inputOutput' value='1 1 1'/>
 <field name='Switch_Translation' type='SFVec3f' accessType='inputOutput' value='0 0 0'/>
+<field name='Switch_Scale' type='SFVec3f' accessType='inputOutput' value='1 1 1'/>
+<field name='Switch_Caption' type='MFString' accessType='inputOutput' value='"Switch" '/>
 <field name='Switch_State' type='SFBool' accessType='outputOnly'/>
 </ProtoInterface>
 <ProtoBody>
@@ -350,6 +384,23 @@
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   ]]>
   </Script>
 <ROUTE fromNode='SwitchButton_Sensor' fromField='isActive' toNode='SwitchButton_Script' toField='SButton_Active'/>
@@ -361,7 +412,7 @@
 </NavigationInfo>
 <Background groundColor='0 0.8 0' skyAngle='1 1.2 1.5708' skyColor='0.8 0.8 1 0.7 0.7 0.8 0.5 0.5 0.8 0.4 0.4 0.8'>
 </Background>
-<Viewpoint DEF='Camera1'  fieldOfView='1.2' description='Camera 1' orientation='1 0 0 -0.7' position='-8 15 15'>
+<Viewpoint DEF='MainView'  fieldOfView='1.2' description='Camera 1' orientation='1 0 0 -0.7' position='-8 15 15'>
 </Viewpoint>
 <DirectionalLight direction='-1 -2 -1'>
 </DirectionalLight>
@@ -450,7 +501,7 @@
     <!--       Humusoft Logo - Stand	 -->
     <Shape>
       <Appearance>
-        <ImageTexture>
+        <ImageTexture url='"logotextureAsset.jpg" '>
         </ImageTexture>
       </Appearance>
       <IndexedFaceSet creaseAngle='1' coordIndex='0 1 2 3 -1' colorPerVertex='false' solid='false'>
@@ -462,25 +513,29 @@
     </Shape>
   </Transform>
 </Transform>
+<Viewpoint DEF='MotorView'  fieldOfView='0.7854' orientation='-0.680744 -0.730056 -0.0600545 0.412387' position='-6.62288 9.47484 -0.810868'>
+</Viewpoint>
+<Viewpoint DEF='CoverView'  fieldOfView='0.7854' orientation='-0.238369 0.966133 0.0988262 0.516215' position='11.4577 4.15547 -3.54465'>
+</Viewpoint>
 <Transform DEF='Switch_Button_Transform'  translation='-4 0 -4'>
   <ProtoInstance DEF='Switch_1' name='Switch_Button'>
-  <fieldValue name='Switch_Caption' value='"Simulate" '/>
-  <fieldValue name='Switch_Scale' value='1 1 1'/>
   <fieldValue name='Switch_Translation' value='0 0 0'/>
+  <fieldValue name='Switch_Scale' value='1 1 1'/>
+  <fieldValue name='Switch_Caption' value='"Simulate" '/>
   </ProtoInstance>
 </Transform>
 <Transform DEF='Push_Button_Transform'  translation='4 0 -4'>
   <ProtoInstance DEF='PushButton_1' name='Push_Button'>
-  <fieldValue name='Button_Caption' value='"+Step" "" "PID" '/>
-  <fieldValue name='Button_Scale' value='1 1 1'/>
   <fieldValue name='Button_Translation' value='0 0 0'/>
+  <fieldValue name='Button_Scale' value='1 1 1'/>
+  <fieldValue name='Button_Caption' value='"+Step" "" "PID" '/>
   </ProtoInstance>
 </Transform>
 <Transform DEF='Toggle_Transform'  translation='0 0 2' scale='2 2 2' rotation='0 1 0 1.5708'>
   <ProtoInstance DEF='Toggle_1' name='Toggle'>
-  <fieldValue name='Toggle_Scale' value='1 1 1'/>
-  <fieldValue name='Toggle_Rotation' value='0 1 0 0'/>
   <fieldValue name='Toggle_Translation' value='0 0 0'/>
+  <fieldValue name='Toggle_Rotation' value='0 1 0 0'/>
+  <fieldValue name='Toggle_Scale' value='1 1 1'/>
   </ProtoInstance>
 </Transform>
 <Transform DEF='Grid'  translation='0 5 -40' scale='20 20 20'>
@@ -495,8 +550,6 @@
     </IndexedLineSet>
   </Shape>
 </Transform>
-<Viewpoint DEF='mainvp'  fieldOfView='1.2' orientation='-0.991825 0.0427847 0.120221 0.436619' position='-2.93482 11.2142 20.3266'>
-</Viewpoint>
 <Transform DEF='Motor'  translation='0 0 -40'>
   <Transform DEF='body1'  scale='8 10 15'>
     <Shape>
