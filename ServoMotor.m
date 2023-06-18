@@ -32,7 +32,6 @@ classdef ServoMotor
              motor=ServoMotor(900,0.2,50,0.05,0.4,0.05);
              gf=motor.getTransferFunction;
              result=feedback(gf,1);
-               % result=gf;
         end
     end
     
