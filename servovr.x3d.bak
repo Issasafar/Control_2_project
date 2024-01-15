@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+<head>
+</head>
+<Scene>
+<WorldInfo title='Servo-Motor simulation'>
+</WorldInfo>
+<Transform>
+</Transform>
+<Background skyColor='0.8 0.8 1'>
+</Background>
+<Transform DEF='motor'  scale='5 5 5' rotation='1.5 1 1 90'>
+  <Shape DEF='body' >
+    <Appearance>
+      <Material diffuseColor='1 1 1'>
+      </Material>
+    </Appearance>
+    <Cylinder>
+    </Cylinder>
+  </Shape>
+  <Transform DEF='topbody'  translation='0 1 0' scale='1 0.6 1'>
+    <Shape DEF='cover' >
+      <Appearance>
+        <Material diffuseColor='1 1 1'>
+        </Material>
+      </Appearance>
+      <Sphere>
+      </Sphere>
+    </Shape>
+    <Transform translation='0 0.9 0'>
+      <Shape DEF='axis' >
+        <Appearance>
+          <Material diffuseColor='1 1 0.8'>
+          </Material>
+        </Appearance>
+        <Cylinder radius='0.1' height='2.5'>
+        </Cylinder>
+      </Shape>
+      <Transform DEF='rotor'  translation='0 1 0' scale='0.15 1 1' rotation='0 1 0 0.27'>
+        <Shape>
+          <Appearance>
+            <Material diffuseColor='0 1 1'>
+            </Material>
+          </Appearance>
+          <Cylinder height='0.2'>
+          </Cylinder>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Transform translation='0 -2.85 0'>
+      <Shape DEF='axis_0001' >
+        <Appearance>
+          <Material diffuseColor='1 1 0.8'>
+          </Material>
+        </Appearance>
+        <Cylinder radius='0.1' height='2.5'>
+        </Cylinder>
+      </Shape>
+    </Transform>
+  </Transform>
+  <Transform DEF='bottombody'  translation='0 -1 0' scale='1 0.4 1'>
+    <Shape>
+      <Appearance>
+        <Material diffuseColor='1 1 1'>
+        </Material>
+      </Appearance>
+      <Sphere>
+      </Sphere>
+    </Shape>
+    <Transform translation='0 0.9 0'>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor='1 1 0.8'>
+          </Material>
+        </Appearance>
+        <Cylinder radius='0.1' height='2.5'>
+        </Cylinder>
+      </Shape>
+      <Transform translation='0 1 0' scale='0.15 1 1'>
+        <Shape>
+          <Appearance>
+            <Material diffuseColor='0 1 1'>
+            </Material>
+          </Appearance>
+          <Cylinder height='0.2'>
+          </Cylinder>
+        </Shape>
+      </Transform>
+    </Transform>
+  </Transform>
+</Transform>
+<Transform scale='10 10 10'>
+  <Shape>
+    <Appearance>
+      <Material emissiveColor='1 1 1'>
+      </Material>
+    </Appearance>
+    <IndexedLineSet coordIndex='0 1 5 4 0 3 2 6 7 3 -1 1 2 -1 5 6 -1 4 7 -1'>
+      <Coordinate point='-1 -1 1 1 -1 1 1 1 1 -1 1 1 -1 -1 -1 1 -1 -1 1 1 -1 -1 1 -1'>
+      </Coordinate>
+    </IndexedLineSet>
+  </Shape>
+</Transform>
+<NavigationInfo type='"EXAMINE" '>
+</NavigationInfo>
+<Viewpoint fieldOfView='0.7854' orientation='0.8321 -0.5547 0 0.036' position='-1.8 1.03 30.93'>
+</Viewpoint>
+</Scene>
+</X3D>
